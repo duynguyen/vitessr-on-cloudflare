@@ -36,9 +36,13 @@ async function render(pageContext) {
   const title = getPageTitle(pageContext)
 
   return escapeInject`<!DOCTYPE html>
-    <html>
+    <html lang="en">
       <head>
         <title>${title}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="AEM WKND built in Vite SSR">
+        <meta property="cq:pagemodel_router" content="disabled" />
       </head>
       <body>
         <div id="page-view">${dangerouslySkipEscape(pageHtml)}</div>

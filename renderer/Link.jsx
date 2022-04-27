@@ -2,15 +2,15 @@ import React from "react";
 import { usePageContext } from "./usePageContext";
 
 function Link({ href, children }) {
-  const pageContext = usePageContext();
-  const className = [
-    "navigation-link",
-    pageContext.urlPathname === href && "is-active",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  // const pageContext = usePageContext();
+  // const className = [
+  //   "navigation-link",
+  //   pageContext.urlPathname === href && "is-active",
+  // ]
+  //   .filter(Boolean)
+  //   .join(" ");
   return (
-    <a href={href} className={className}>
+    <a href={href} className="w-32 h-8 py-4 sm:py-6 lg:py-8 px-2 sm:px-6 lg:px-8">
       {children}
     </a>
   );

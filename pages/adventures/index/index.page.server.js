@@ -1,7 +1,7 @@
 import { AdventureClient } from '../../../lib/adventures'
 
-async function onBeforeRender() {
-  const client = AdventureClient.fromEnv()
+async function onBeforeRender(pageContext) {
+  const client = AdventureClient.init(pageContext.fetch)
   const res = await client.getAllAdventures()
   const adventures = res?.data?.adventureList?.items
   

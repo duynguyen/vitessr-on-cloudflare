@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const compression = require('compression')
 const { createPageRenderer } = require('vite-plugin-ssr')
+const fetch = require('node-fetch')
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
@@ -30,6 +31,7 @@ async function startServer() {
     const url = req.originalUrl
     const pageContextInit = {
       url,
+      fetch
     }
     const pageContext = await renderPage(pageContextInit)
     const { httpResponse } = pageContext

@@ -1,7 +1,7 @@
 import { getPageModel } from '../../lib/pages'
 
-async function onBeforeRender() {
-  const model = await getPageModel(import.meta.env.VITE_AEM_PATH)
+async function onBeforeRender(pageContext) {
+  const model = await getPageModel(import.meta.env.VITE_AEM_PATH, pageContext.fetch)
   
   return {
     pageContext: {

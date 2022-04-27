@@ -13,7 +13,7 @@ function Page({ model }) {
     <ResponsiveGrid
       {...responsiveGridModelProps}
       model = {responsiveGridModel}
-      pagePath='/content/wknd-app/us/en/home'
+      pagePath={import.meta.env.VITE_AEM_PATH}
       itemPath='root/responsivegrid'
     />
   </div>

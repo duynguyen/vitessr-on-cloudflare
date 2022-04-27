@@ -2,7 +2,7 @@ import { AdventureClient } from '../../../lib/adventures'
 
 async function onBeforeRender(pageContext) {
   const cfPath = pageContext.routeParams['*']
-  const client = AdventureClient.fromEnv()
+  const client = AdventureClient.init(pageContext.fetch)
   const path = `/content/dam/wknd/en/adventures/${cfPath}`
   const res = await client.getAdventureByPath(path)
   const adventure = res?.data?.adventureByPath?.item
