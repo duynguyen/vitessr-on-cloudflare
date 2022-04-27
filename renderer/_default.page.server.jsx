@@ -24,6 +24,8 @@ function render(pageContext) {
         <title>${title}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="franklin-esr demo">
+        <meta name="robots" content="noindex" />
       </head>
       <body>
         <div id="page-view">${dangerouslySkipEscape(pageHtml)}</div>
