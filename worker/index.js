@@ -17,12 +17,12 @@ async function handleFetchEvent(
   request,
   env
 ) {
-  if (!isAssetUrl(request.url)) {
-    const response = await handleSsr(request.url);
-    if (response !== null) return response;
+  if (isAssetUrl(request.url) || request.url.endsWith('/robots.txt')) {
+    return env.ASSETS.fetch(request);
   }
   
-  return env.ASSETS.fetch(request);
+  const response = await handleSsr(request.url);
+  if (response !== null) return response;
 }
 function isAssetUrl(url) {
   const { pathname } = new URL(url);
