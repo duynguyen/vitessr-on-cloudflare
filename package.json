@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "dev": "node ./server/index.mjs",
+    "prod": "npm run build",
+    "serve": "cross-env NODE_ENV=production node ./server/index.mjs",
+    "serve:worker": "npx wrangler@beta pages dev ./dist/client/",
+    "build": "npm run build:client && npm run build:worker",
+    "build:client": "vite build && vite build --ssr",
+    "build:worker": "node -r esbuild-register build-worker.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^1.2.0",
+    "@vitejs/plugin-vue": "^2.2.2",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.3",
+    "vite": "^2.8.4",
+    "vite-plugin-ssr": "^0.3.62",
+    "vite-plugin-windicss": "^1.8.4",
+    "esbuild": "^0.14.36",
+    "esbuild-register": "^3.3.2",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "windicss": "^3.5.1"
+  }
+}
