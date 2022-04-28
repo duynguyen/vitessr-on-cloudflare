@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withMappable } from '@adobe/aem-react-editable-components';
+import { EditableComponent } from '@adobe/aem-react-editable-components';
 
 const { VITE_AEM_HOST, VITE_AEM_SITE } = import.meta.env;
 
@@ -18,7 +18,7 @@ export default class Image extends Component {
         return <img
                 className="object-fill"
                 src={VITE_AEM_HOST + this.props.src}
-                alt={this.props.alt}
+                alt={this.props.alt || 'aem-image'}
                 title={this.props.title ? this.props.title : this.props.alt} />;
     }
 
@@ -34,4 +34,4 @@ export default class Image extends Component {
     }
 }
 
-export const AEMImage = withMappable(Image, ImageEditConfig);
+export const AEMImage = (props) => <EditableComponent config={ImageEditConfig} {...props}><Image/></EditableComponent>;
