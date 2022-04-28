@@ -9,7 +9,7 @@ async function onBeforeRender(pageContext) {
     pageContext: {
       pageProps: {
         adventures: adventures,
-        ASSETS_SERVER: import.meta.env.VITE_AEM_HOST
+        ASSETS_SERVER: import.meta.env.VITE_AEM_GRAPHQL_HOST
       },
       documentProps: { title: `Adventures` },
     },

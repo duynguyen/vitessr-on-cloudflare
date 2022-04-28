@@ -10,10 +10,10 @@ export const ImageEditConfig = {
     isEmpty: function(props) {
         return !props || !props.src || props.src.trim().length < 1;
     },
-    resourceType: `${VITE_AEM_SITE}/components/image`
+    resourceType: `core/wcm/components/text/v2/image`
 };
 
-export default class Image extends Component {
+export class Image extends Component {
     get content() {
         return <img
                 className="object-fill"

@@ -7,11 +7,11 @@ const { VITE_AEM_SITE } = import.meta.env
 export const TitleEditConfig = {
     emptyLabel: 'Title',
     isEmpty: TitleV2IsEmptyFn,
-    resourceType: `${VITE_AEM_SITE}/components/title`
+    resourceType: `core/wcm/components/text/v2/title`
 }
 
 export const Title = ({ text }) => {
-    return (<h1 className="text-2xl font-semibold my-2">{text}</h1>)
+    return (<h2 className="text-2xl font-semibold my-2">{text}</h2>)
 };
 
 export const AEMTitle = (props) => <EditableComponent config={TitleEditConfig} {...props}><Title/></EditableComponent>

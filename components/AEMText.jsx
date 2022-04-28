@@ -8,7 +8,7 @@ export const TextEditConfig = {
     isEmpty: function(props) {
         return !props || !props.text || props.text.trim().length < 1;
     },
-    resourceType: `${VITE_AEM_SITE}/components/text`
+    resourceType: `core/wcm/components/text/v2/text`
 };
 
 export const Text = (props) => {
